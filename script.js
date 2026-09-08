@@ -1,6 +1,5 @@
 var choices = ["rock", "paper", "scissors"];
-var playerWins = 0;
-var computerWins = 0;
+
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) return "Tie";
@@ -9,15 +8,17 @@ function playRound(playerSelection, computerSelection) {
         : "Player wins";
 }
 
-function resetGameWins() {
-    playerWins = 0;
-    computerWins = 0;
+function computerPlay() {
+    return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function game() {
+
+    var playerWins = 0;
+    var computerWins = 0;
     do {
         var playerSelection = prompt("Choose rock, paper, or scissors:").toLowerCase();
-        var computerSelection = choices[Math.floor(Math.random() * choices.length)];
+        var computerSelection = computerPlay();
         var result = playRound(playerSelection, computerSelection);
 
         if (result === "Player wins") playerWins++;
@@ -29,4 +30,3 @@ function game() {
 }
 
 game();
-resetGameWins();
