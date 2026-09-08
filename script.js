@@ -14,16 +14,19 @@ function resetGameWins() {
     computerWins = 0;
 }
 
-do {
-    var playerSelection = prompt("Choose rock, paper, or scissors:").toLowerCase();
-    var computerSelection = choices[Math.floor(Math.random() * choices.length)];
-    var result = playRound(playerSelection, computerSelection);
+function game() {
+    do {
+        var playerSelection = prompt("Choose rock, paper, or scissors:").toLowerCase();
+        var computerSelection = choices[Math.floor(Math.random() * choices.length)];
+        var result = playRound(playerSelection, computerSelection);
 
-    if (result === "Player wins") playerWins++;
-    if (result === "Computer wins") computerWins++;
+        if (result === "Player wins") playerWins++;
+        if (result === "Computer wins") computerWins++;
 
-    console.log(result, "Player:", playerWins, "Computer:", computerWins);
-} while (playerWins < 3 && computerWins < 3);
+        console.log(result, "Player:", playerWins, "Computer:", computerWins);
+    } while (playerWins < 3 && computerWins < 3);
+    console.log(playerWins === 3 ? "Player wins the game!" : "Computer wins the game!");
+}
 
-console.log(playerWins === 3 ? "Player wins the game!" : "Computer wins the game!");
+game();
 resetGameWins();
