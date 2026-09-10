@@ -34,7 +34,7 @@ function game() {
         "Welcome to Rock, Paper, Scissors!\n\n" +
         "You will play against the computer.\n" +
         "The first player to win 3 rounds wins the game.\n\n" +
-        "Your results will appear in the browser console.\n\n" +
+        "Your results will appear in the browser console. (Press F12 on your keyboard to open)\n\n" +
         "Click OK to start!"
     );
 
